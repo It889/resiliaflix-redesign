@@ -1,0 +1,209 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    --text-color: #FFF;
+    --background-color: #0a0a0a;
+
+    --primary-font: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+}
+
+#header {
+    background: rgb(45, 0, 78);
+    background: linear-gradient(0deg, rgba(45, 0, 78, 1) 0%, rgba(0, 0, 0, 1) 100%);
+
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+#header .navbar {
+    color: var(--text-color);
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    margin: 0 3.125rem;
+}
+
+#header .navbar .navmenu, #header .navbar .navmenu .menu {
+    display: flex;
+}
+
+#header .navbar .navmenu .menu {
+    list-style: none;
+
+    align-items: center;
+}
+
+#header .navbar .navmenu .menu a {
+    color: var(--text-color);
+    margin: 0 0.625rem;
+    letter-spacing: .5px;
+    padding: 0 10px;
+
+    position: relative;
+}
+
+#header .navbar .navmenu .menu a::after {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s; 
+
+}
+
+#header .navbar .navmenu .menu a:hover::after {
+    width: 100%;
+}
+
+
+header .navbar .navmenu .logo {
+    font-size: 1.5rem;
+    margin-right: 2rem;
+
+    display: flex;
+    align-items: center;
+}
+
+#header .navbar .get-started .login {
+    background: transparent;
+    color: var(--primary-font);
+    border: none;
+    margin: 0 20px;
+}
+
+#header .navbar .get-started .login {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: .125em;
+    --curve-size: .5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: .5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    clip-path: polygon(
+              /* Top-left */
+              0% var(--curve-size),
+  
+              var(--curve-size) 0,
+              /* top-right */
+              100% 0,
+              100% calc(100% - var(--curve-size)),
+  
+              /* bottom-right 1 */
+              calc(100% - var(--curve-size)) 100%,
+              /* bottom-right 2 */
+              0 100%);
+    transition: color 250ms;
+  }
+  
+  #header .navbar .get-started .login::after,
+  #header .navbar .get-started .login::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  
+  #header .navbar .get-started .login::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+  }
+  
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%
+    }
+  
+    50% {
+      background-position: 70% 100%
+    }
+  
+    100% {
+      background-position: 31% 0%
+    }
+  }
+  
+  #header .navbar .get-started .login::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+              /* Top-left */
+              var(--border-width) 
+              calc(var(--curve-size) + var(--border-width) * .5),
+  
+              calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+  
+              /* top-right */
+              calc(100% - var(--border-width)) 
+              var(--border-width),
+  
+              calc(100% - var(--border-width)) 
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+  
+              /* bottom-right 1 */
+              calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+              /* bottom-right 2 */
+              var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+  }
+  
+  #header .navbar .get-started .login:where(:hover, :focus)::after {
+    clip-path: polygon(
+                  /* Top-left */
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      
+                  calc(100% - var(--border-width))
+  
+                  var(--border-width),
+      
+                  /* top-right */
+                  calc(100% - var(--border-width))
+  
+                   var(--border-width),
+      
+                  calc(100% - var(--border-width)) 
+  
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+      
+                  /* bottom-right 1 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
+                  calc(100% - var(--border-width)),
+  
+                  /* bottom-right 2 */
+                  calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                  calc(100% - var(--border-width)));
+    transition: 200ms;
+  }
+  
+  #header .navbar .get-started .login:where(:hover, :focus) {
+    color: #fff;
+  }
